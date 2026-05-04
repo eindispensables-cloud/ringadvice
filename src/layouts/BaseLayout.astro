@@ -1,0 +1,56 @@
+---
+import '../styles/global.css';
+const { title, description, lang = 'en' } = Astro.props;
+const isES = lang === 'es';
+const navItems = isES
+  ? [{ href: '/es', label: 'Inicio' },{ href: '/es/analisis', label: 'Análisis' },{ href: '/es/comparativas', label: 'Comparativas' }]
+  : [{ href: '/', label: 'Home' },{ href: '/reviews', label: 'Reviews' },{ href: '/guides', label: 'Guides' }];
+---
+<!doctype html>
+<html lang={lang}>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="alternate" hreflang="en" href="https://ringadvice.com" />
+  <link rel="alternate" hreflang="es" href="https://ringadvice.com/es" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+</head>
+<body>
+  <div class="glow-bg"></div>
+  <header class="site-header">
+    <div class="container">
+      <div class="site-header__inner">
+        <a href={isES ? '/es' : '/'} class="site-logo">
+          <div class="site-logo__icon">◎</div>
+          ring<span>advice</span>
+        </a>
+        <nav class="site-nav">
+          {navItems.map(item => <a href={item.href}>{item.label}</a>)}
+        </nav>
+        <a href={isES ? '/es' : '/'} class="cta-btn" style="padding:7px 16px;font-size:13px;">
+          {isES ? 'Ver análisis →' : 'See reviews →'}
+        </a>
+      </div>
+    </div>
+  </header>
+  <main style="position:relative;z-index:1;"><slot /></main>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__inner">
+        <p>© {new Date().getFullYear()} ringadvice.com</p>
+        <div>
+          <a href="/es">🇪🇸 ES</a>
+          <a href="/">🇺🇸 EN</a>
+        </div>
+      </div>
+      <p class="affiliate-note">
+        {isES ? 'ringadvice.com participa en el Programa de Afiliados de Amazon. Ganamos una pequeña comisión cuando compras a través de nuestros enlaces, sin coste adicional para ti.' : 'ringadvice.com is a participant in the Amazon Associates Program. We earn a small commission when you purchase through our links, at no extra cost to you.'}
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
