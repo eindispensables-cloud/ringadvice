@@ -14,6 +14,13 @@ const { title, description, lang = 'en', image = '/og-default.jpg', enPath = '/'
 const isES = lang === 'es';
 const canonical = Astro.url.href;
 
+const now = new Date();
+const monthsEN = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+const monthsES = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+const buildDate = isES
+  ? `${monthsES[now.getMonth()]} ${now.getFullYear()}`
+  : `${monthsEN[now.getMonth()]} ${now.getFullYear()}`;
+
 const navItems = isES
   ? [
       { href: '/es', label: 'Inicio' },
@@ -57,20 +64,17 @@ const navItems = isES
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={image} />
 
-    <!-- Schema.org -->
-    <script type="application/ld+json">
-      {JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "RingAdvice",
-        "url": "https://ringadvice.com",
-        "description": "Independent reviews and comparisons of smart health rings",
-        "inLanguage": [lang]
-      })}
-    </script>
+    <!-- Schema.org WebSite -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "RingAdvice",
+      "url": "https://ringadvice.com",
+      "description": "Independent reviews and comparisons of smart health rings",
+      "inLanguage": lang
+    })} />
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="sitemap" href="/sitemap-index.xml" />
   </head>
   <body>
     <div class="glow-bg"></div>
@@ -87,7 +91,7 @@ const navItems = isES
               <a href={item.href}>{item.label}</a>
             ))}
           </nav>
-          <a href={isES ? '/es' : '/'} class="cta-btn" style="padding:7px 16px;font-size:13px;">
+          <a href={isES ? '/es/analisis' : '/reviews'} class="cta-btn" style="padding:7px 16px;font-size:13px;">
             {isES ? 'Ver análisis →' : 'See reviews →'}
           </a>
         </div>
@@ -101,18 +105,17 @@ const navItems = isES
     <footer class="site-footer">
       <div class="container">
         <div class="site-footer__inner">
-          <p>© {new Date().getFullYear()} ringadvice.com · {isES ? 'Guía independiente de anillos inteligentes' : 'Independent smart ring guide'}</p>
+          <p>© {now.getFullYear()} ringadvice.com · {isES ? 'Guía independiente de anillos inteligentes' : 'Independent smart ring guide'}</p>
           <div>
             <a href={isES ? '/es/privacidad' : '/privacy'}>{isES ? 'Privacidad' : 'Privacy'}</a>
-            <a href={isES ? '/es/afiliados' : '/affiliate-disclosure'}>{isES ? 'Afiliados' : 'Affiliate Disclosure'}</a>
             <a href={esPath} style="margin-left:20px">🇪🇸 ES</a>
             <a href={enPath} style="margin-left:8px">🇺🇸 EN</a>
           </div>
         </div>
         <p class="affiliate-note" style="margin-top:16px">
           {isES
-            ? 'ringadvice.com participa en el Programa de Afiliados de Amazon. Ganamos una pequeña comisión cuando compras a través de nuestros enlaces, sin coste adicional para ti. Nuestras recomendaciones son siempre independientes.'
-            : 'ringadvice.com is a participant in the Amazon Associates Program. We earn a small commission when you purchase through our links, at no extra cost to you. Our reviews are always independent.'}
+            ? 'ringadvice.com utiliza enlaces de afiliado. Podemos ganar una pequeña comisión si realizas una compra a través de nuestros enlaces, sin coste adicional para ti.'
+            : 'ringadvice.com uses affiliate links. We may earn a small commission if you make a purchase through our links, at no extra cost to you.'}
         </p>
       </div>
     </footer>

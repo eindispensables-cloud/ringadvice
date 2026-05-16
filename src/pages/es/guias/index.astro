@@ -1,0 +1,59 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+const now = new Date();
+const monthsES = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+const buildDate = `${monthsES[now.getMonth()]} ${now.getFullYear()}`;
+
+const articles = [
+  {
+    href: '/es/guias/para-que-sirve-un-anillo-inteligente-de-salud',
+    title: '¿Para Qué Sirve un Anillo Inteligente de Salud? Guía Completa',
+    desc: 'Todo lo que necesitas saber antes de comprar tu primer anillo inteligente. Qué mide, para quién es y qué esperar.',
+    time: '7 min de lectura',
+  },
+  {
+    href: '/es/guias/oura-ring-para-que-sirve-exactamente',
+    title: 'Oura Ring: ¿Para Qué Sirve Exactamente?',
+    desc: 'Una explicación clara de qué mide el Oura Ring, qué significan sus métricas y si es el dispositivo adecuado para ti.',
+    time: '8 min de lectura',
+  },
+  {
+    href: '/es/guias/anillo-inteligente-o-smartwatch-para-salud',
+    title: 'Anillo Inteligente vs Smartwatch: ¿Cuál es Mejor para la Salud?',
+    desc: 'No son competidores directos — resuelven problemas distintos. Aquí te explicamos cuál necesitas realmente.',
+    time: '8 min de lectura',
+  },
+];
+---
+<BaseLayout title="Guías de Anillos Inteligentes (2026) — Cómo Elegir y Usar | RingAdvice" description="Guías independientes sobre anillos inteligentes. Qué miden, cómo elegir el correcto y cómo sacarles el máximo partido." lang="es" enPath="/guides" esPath="/es/guias">
+<section style="padding:clamp(40px,6vw,80px) 0;">
+  <div class="container">
+    <nav style="margin-bottom:24px;font-size:12px;font-family:monospace;color:rgba(255,255,255,0.3);">
+      <a href="/es" style="color:rgba(255,255,255,0.35);">ringadvice</a> / <span style="color:#00FFB2;">guías</span>
+    </nav>
+    <span class="badge badge--purple">GUÍAS</span>
+    <h1 style="font-size:clamp(28px,4vw,42px);font-weight:400;color:#fff;margin:16px 0 12px;line-height:1.2;">Guías de Anillos Inteligentes</h1>
+    <p style="font-size:17px;color:rgba(255,255,255,0.55);max-width:600px;margin-bottom:8px;">Guías prácticas para entender, elegir y usar anillos inteligentes de forma efectiva.</p>
+    <p style="font-size:12px;color:rgba(255,255,255,0.3);font-family:monospace;margin-bottom:48px;">📅 Actualizado en {buildDate}</p>
+
+    <div style="display:grid;gap:20px;">
+      {articles.map(a => (
+        <a href={a.href} style="display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:24px;text-decoration:none;transition:border-color .2s;" onmouseover="this.style.borderColor='rgba(0,255,178,0.3)'" onmouseout="this.style.borderColor='var(--border)'">
+          <span class="badge badge--purple" style="font-size:10px;padding:3px 8px;">GUÍA</span>
+          <h2 style="font-size:18px;font-weight:400;color:#fff;margin:10px 0 8px;line-height:1.3;">{a.title}</h2>
+          <p style="font-size:14px;color:rgba(255,255,255,0.5);margin:0 0 10px;">{a.desc}</p>
+          <span style="font-size:11px;color:rgba(255,255,255,0.25);font-family:monospace;">⏱ {a.time}</span>
+        </a>
+      ))}
+    </div>
+
+    <div style="margin-top:48px;padding:24px;background:var(--surface);border:1px solid var(--border);border-radius:12px;">
+      <p style="font-size:13px;color:rgba(255,255,255,0.4);margin-bottom:16px;">¿Listo para elegir un anillo inteligente?</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;">
+        <a href="/es/analisis/mejor-anillo-inteligente-2026" class="cta-btn" style="font-size:13px;padding:8px 16px;">Ver mejores anillos 2026 →</a>
+        <a href="/es/comparativas" class="cta-btn cta-btn--outline" style="font-size:13px;padding:8px 16px;">Comparativas →</a>
+      </div>
+    </div>
+  </div>
+</section>
+</BaseLayout>

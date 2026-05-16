@@ -1,0 +1,59 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const now = new Date();
+const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+const buildDate = `${months[now.getMonth()]} ${now.getFullYear()}`;
+
+const articles = [
+  {
+    href: '/guides/what-is-a-smart-health-ring',
+    title: 'What Is a Smart Health Ring For? Complete Beginner\'s Guide',
+    desc: 'Everything you need to know before buying your first smart ring. What it measures, who needs it, and what to expect.',
+    time: '7 min read',
+  },
+  {
+    href: '/guides/what-does-oura-ring-do',
+    title: 'What Does the Oura Ring Actually Do?',
+    desc: 'A clear explanation of what the Oura Ring measures, what its metrics mean and whether it\'s right for you.',
+    time: '8 min read',
+  },
+  {
+    href: '/guides/smart-ring-vs-smartwatch',
+    title: 'Smart Ring vs Smartwatch: Which Is Better for Health?',
+    desc: 'They\'re not competitors — they solve different problems. Here\'s which one you actually need.',
+    time: '8 min read',
+  },
+];
+---
+<BaseLayout title="Smart Ring Guides (2026) — How to Choose & Use | RingAdvice" description="Independent smart ring guides. What smart rings measure, how to choose the right one, and how to get the most out of your data." lang="en" enPath="/guides" esPath="/es/guias">
+<section style="padding:clamp(40px,6vw,80px) 0;">
+  <div class="container">
+    <nav style="margin-bottom:24px;font-size:12px;font-family:monospace;color:rgba(255,255,255,0.3);">
+      <a href="/" style="color:rgba(255,255,255,0.35);">ringadvice</a> / <span style="color:#00FFB2;">guides</span>
+    </nav>
+    <span class="badge badge--purple">GUIDES</span>
+    <h1 style="font-size:clamp(28px,4vw,42px);font-weight:400;color:#fff;margin:16px 0 12px;line-height:1.2;">Smart Ring Guides</h1>
+    <p style="font-size:17px;color:rgba(255,255,255,0.55);max-width:600px;margin-bottom:8px;">Practical guides to help you understand, choose and use smart rings effectively.</p>
+    <p style="font-size:12px;color:rgba(255,255,255,0.3);font-family:monospace;margin-bottom:48px;">📅 Updated {buildDate}</p>
+
+    <div style="display:grid;gap:20px;">
+      {articles.map(a => (
+        <a href={a.href} style="display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:24px;text-decoration:none;transition:border-color .2s;" onmouseover="this.style.borderColor='rgba(0,255,178,0.3)'" onmouseout="this.style.borderColor='var(--border)'">
+          <span class="badge badge--purple" style="font-size:10px;padding:3px 8px;">GUIDE</span>
+          <h2 style="font-size:18px;font-weight:400;color:#fff;margin:10px 0 8px;line-height:1.3;">{a.title}</h2>
+          <p style="font-size:14px;color:rgba(255,255,255,0.5);margin:0 0 10px;">{a.desc}</p>
+          <span style="font-size:11px;color:rgba(255,255,255,0.25);font-family:monospace;">⏱ {a.time}</span>
+        </a>
+      ))}
+    </div>
+
+    <div style="margin-top:48px;padding:24px;background:var(--surface);border:1px solid var(--border);border-radius:12px;">
+      <p style="font-size:13px;color:rgba(255,255,255,0.4);margin-bottom:16px;">Ready to choose a smart ring?</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;">
+        <a href="/reviews/best-smart-ring-2026" class="cta-btn" style="font-size:13px;padding:8px 16px;">See best rings 2026 →</a>
+        <a href="/comparisons" class="cta-btn cta-btn--outline" style="font-size:13px;padding:8px 16px;">Comparisons →</a>
+      </div>
+    </div>
+  </div>
+</section>
+</BaseLayout>

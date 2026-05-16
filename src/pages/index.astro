@@ -1,90 +1,124 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+const now = new Date();
+const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+const currentDate = `Updated ${months[now.getMonth()]} ${now.getFullYear()}`;
+const products = [
+  { name:"Oura Ring 4", desc:"Most accurate sleep and HRV analysis. Compatible with iPhone and Android.", price:"from $349", sub:"$6/mo", subColor:"#FF6B35", score:"9.4", tag:"TOP RATED", tagColor:"#00FFB2", img:"https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=600&q=80", url:"https://ouraring.com", pros:["Best sleep analysis","iOS & Android","8-day battery"], cons:["Requires monthly subscription"], slug:"/reviews/is-oura-ring-worth-it-2026" },
+  { name:"Samsung Galaxy Ring", desc:"No monthly subscription. Ideal for Android and Samsung ecosystem users.", price:"from $299", sub:"No subscription", subColor:"#00FFB2", score:"8.8", tag:"NO FEE", tagColor:"#FFD700", img:"https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&q=80", url:"https://www.samsung.com/us/smartphones/galaxy-ring/", pros:["No subscription","Samsung Health integration","7-day battery"], cons:["Android only"], slug:"/comparisons/samsung-galaxy-ring-vs-oura-ring" },
+  { name:"Ultrahuman Ring Air", desc:"The lightest alternative. No subscription, compatible with iOS and Android.", price:"from $249", sub:"No subscription", subColor:"#00FFB2", score:"8.3", tag:"BEST VALUE", tagColor:"#A78BFA", img:"https://images.unsplash.com/photo-1434494878577-86c23bcb06b9?w=600&q=80", url:"https://www.ultrahuman.com/ring", pros:["Ultra-light","No subscription","iOS compatible"], cons:["Less accurate HRV"], slug:"/comparisons/oura-ring-alternatives-no-subscription" }
+];
+const articles = [
+  { tag:"GUIDE", tagColor:"#A78BFA", title:"What is a smart health ring for?", excerpt:"A smart ring measures your sleep, heart rate and recovery 24/7. No screen, no fuss.", img:"https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=400&q=80", slug:"/guides/what-is-a-smart-health-ring", time:"7 min" },
+  { tag:"GUIDE", tagColor:"#A78BFA", title:"What does the Oura Ring actually do?", excerpt:"The Oura Ring measures sleep, HRV and recovery. Honest guide on what it does and doesn't.", img:"https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&q=80", slug:"/guides/what-does-oura-ring-do", time:"8 min" },
+  { tag:"REVIEW", tagColor:"#00FFB2", title:"Smart ring for sleep tracking: real results", excerpt:"60 nights of testing. Is a smart ring worth it for sleep?", img:"https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=400&q=80", slug:"/reviews/smart-ring-sleep-tracking-review", time:"9 min" },
+  { tag:"COMPARISON", tagColor:"#FF6B35", title:"Oura Ring alternatives with no subscription", excerpt:"The best Oura Ring alternatives with no monthly fee.", img:"https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&q=80", slug:"/comparisons/oura-ring-alternatives-no-subscription", time:"8 min" },
+  { tag:"COMPARISON", tagColor:"#FF6B35", title:"Samsung Galaxy Ring vs Oura Ring: which to buy", excerpt:"The two best rings head to head. Tested 60 days under the same conditions.", img:"https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=400&q=80", slug:"/comparisons/samsung-galaxy-ring-vs-oura-ring", time:"10 min" },
+  { tag:"REVIEW", tagColor:"#00FFB2", title:"Oura Ring review after 2 months of real use", excerpt:"60 days with the Oura Ring 4. The good, the bad, and whether it's worth it.", img:"https://images.unsplash.com/photo-1434494878577-86c23bcb06b9?w=400&q=80", slug:"/reviews/oura-ring-review-after-2-months", time:"9 min" },
+  { tag:"GUIDE", tagColor:"#A78BFA", title:"Smart ring vs smartwatch: which is better?", excerpt:"They're not the same. We explain when to choose each one.", img:"https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&q=80", slug:"/guides/smart-ring-vs-smartwatch", time:"8 min" },
+  { tag:"REVIEW", tagColor:"#00FFB2", title:"Best smart rings with no subscription 2026", excerpt:"Serious health tracking without paying a monthly fee.", img:"https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&q=80", slug:"/reviews/best-smart-rings-no-subscription", time:"8 min" },
+  { tag:"REVIEW", tagColor:"#00FFB2", title:"Is the Oura Ring worth it in 2026?", excerpt:"$349 plus subscription is a lot of money. Direct answer: yes or no for your case.", img:"https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=400&q=80", slug:"/reviews/is-oura-ring-worth-it-2026", time:"7 min" },
+  { tag:"⭐ PILLAR GUIDE", tagColor:"#FFD700", title:"The best smart ring of 2026: complete guide", excerpt:"All rings analyzed and compared. Which one to buy for your needs and budget.", img:"https://images.unsplash.com/photo-1434494878577-86c23bcb06b9?w=400&q=80", slug:"/reviews/best-smart-ring-2026", time:"12 min" }
+];
 ---
-
 <BaseLayout
-  title="Best Smart Rings 2025 — Independent Reviews & Comparisons"
+  title="Best Smart Rings 2026 — Independent Reviews & Comparisons"
   description="60-day tested smart ring reviews. Honest comparisons of Oura Ring, Samsung Galaxy Ring, Ultrahuman and more. Find the best ring for your health goals."
   lang="en"
   enPath="/"
   esPath="/es"
 >
-  <!-- Hero -->
-  <section style="padding: clamp(48px,8vw,96px) 0 clamp(32px,5vw,64px);">
-    <div class="container">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;">
-        <div>
-          <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(0,255,178,0.08);border:1px solid rgba(0,255,178,0.2);border-radius:20px;padding:4px 14px;margin-bottom:24px;">
-            <span style="width:6px;height:6px;border-radius:50%;background:var(--accent);animation:pulse 2s infinite;"></span>
-            <span style="font-size:11px;color:var(--accent);font-family:'DM Mono',monospace;letter-spacing:0.1em;">UPDATED MAY 2025</span>
-          </div>
-          <h1 style="font-size:clamp(28px,4vw,48px);line-height:1.15;color:#fff;font-weight:400;margin-bottom:20px;letter-spacing:-0.02em;">
-            The independent guide to<br/>
-            <em style="color:var(--accent);">smart health rings</em><br/>
-            that actually work.
-          </h1>
-          <p style="font-size:17px;color:rgba(255,255,255,0.55);line-height:1.7;margin-bottom:32px;">
-            Real 60-day tests. Side-by-side data. No brand deals — just commissions when you buy through our links.
-          </p>
-          <div style="display:flex;gap:12px;flex-wrap:wrap;">
-            <a href="/best-smart-rings-2025" class="cta-btn cta-btn--lg">See Best Rings →</a>
-            <a href="/how-we-test" class="cta-btn cta-btn--outline" style="padding:14px 24px;">How We Test</a>
-          </div>
-        </div>
-        <div style="background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:28px;">
-          <div style="font-size:11px;color:rgba(255,255,255,0.35);font-family:'DM Mono',monospace;letter-spacing:0.08em;margin-bottom:16px;">EDITOR'S PICK — MAY 2025</div>
-          <div style="background:rgba(255,255,255,0.04);border-radius:10px;aspect-ratio:16/9;margin-bottom:20px;display:flex;align-items:center;justify-content:center;">
-            <span style="font-size:48px;opacity:0.4;">◎</span>
-          </div>
-          <div style="display:flex;justify-content:space-between;align-items:flex-start;">
-            <div>
-              <h3 style="font-size:18px;font-weight:400;color:#fff;margin-bottom:6px;">Oura Ring Gen 4</h3>
-              <p style="font-size:13px;color:rgba(255,255,255,0.4);">Best overall · $349</p>
-            </div>
-            <div class="score"><div class="score__num">9.4</div><div class="score__label">/ 10</div></div>
-          </div>
-          <div style="margin-top:20px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;">
-            {[['Sleep','★★★★★'],['HRV','★★★★★'],['Battery','★★★★☆']].map(([l,s]) => (
-              <div style="background:rgba(255,255,255,0.03);border-radius:8px;padding:10px 6px;text-align:center;">
-                <div style="font-size:10px;color:rgba(255,255,255,0.35);margin-bottom:4px;font-family:'DM Mono',monospace;">{l}</div>
-                <div style="font-size:11px;color:var(--accent);">{s}</div>
-              </div>
-            ))}
-          </div>
-          <a href="/reviews/oura-ring-gen-4-review" class="cta-btn" style="display:block;text-align:center;margin-top:16px;width:100%;">Read Full Review →</a>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Articles -->
-  <section style="padding:0 0 80px;">
-    <div class="container">
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:32px;">
-        <h2 style="font-size:22px;font-weight:400;">Latest Reviews</h2>
-        <a href="/reviews" style="font-size:13px;color:rgba(255,255,255,0.4);">View all →</a>
+<section style="padding:clamp(48px,8vw,80px) 0 48px;">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;">
+      <div>
+        <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(0,255,178,0.08);border:1px solid rgba(0,255,178,0.2);border-radius:20px;padding:4px 14px;margin-bottom:20px;">
+          <span style="width:6px;height:6px;border-radius:50%;background:#00FFB2;"></span>
+          <span style="font-size:11px;color:#00FFB2;font-family:monospace;letter-spacing:0.1em;">{currentDate.toUpperCase()}</span>
+        </div>
+        <h1 style="font-size:clamp(26px,3.5vw,44px);line-height:1.15;color:#fff;font-weight:400;margin-bottom:18px;">The independent guide to<br/><em style="color:#00FFB2;">smart health rings</em><br/>that actually work.</h1>
+        <p style="font-size:16px;color:rgba(255,255,255,0.55);line-height:1.7;margin-bottom:28px;">Independent reviews based on real testing. No sponsored content, no brand partnerships.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+          <a href="/reviews/best-smart-ring-2026" class="cta-btn cta-btn--lg">See Best Rings →</a>
+          <a href="/reviews" class="cta-btn cta-btn--outline" style="padding:14px 20px;">All Reviews</a>
+        </div>
       </div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px;">
-        {[
-          { tag:'BEST PICK', tagClass:'badge', title:'Oura Ring 4 vs Samsung Galaxy Ring: Which One Actually Wins?', excerpt:'After 60 days testing both, here\'s the honest breakdown on sleep, HRV, and battery.', href:'/reviews/oura-ring-vs-samsung-galaxy-ring', time:'8 min' },
-          { tag:'TRENDING', tagClass:'badge badge--orange', title:'5 Smart Rings Under $150 That Rival the Oura Ring', excerpt:'You don\'t need to spend $349 to get accurate health tracking. Here\'s what actually works.', href:'/reviews/cheap-oura-ring-alternatives', time:'6 min' },
-          { tag:'GUIDE', tagClass:'badge badge--purple', title:'HRV Explained: What It Means and Why Smart Rings Track It', excerpt:'Heart Rate Variability is the metric that separates premium rings from the rest.', href:'/guides/what-is-hrv-smart-ring', time:'10 min' },
-        ].map(a => (
-          <a href={a.href} class="card" style="display:block;color:inherit;text-decoration:none;">
-            <div style="background:rgba(255,255,255,0.04);aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;">
-              <span style="font-size:32px;opacity:0.2;">◎</span>
+      <div style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.07);border-radius:16px;padding:24px;">
+        <div style="font-size:10px;color:rgba(255,255,255,0.3);font-family:monospace;margin-bottom:14px;">EDITOR'S PICK — {currentDate.toUpperCase()}</div>
+        <img src={products[0].img} alt="Oura Ring 4" style="width:100%;border-radius:10px;aspect-ratio:16/9;object-fit:cover;margin-bottom:18px;" loading="lazy"/>
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px;">
+          <div><h3 style="font-size:18px;font-weight:400;color:#fff;margin-bottom:4px;">Oura Ring 4</h3><p style="font-size:12px;color:rgba(255,255,255,0.4);">Best overall · from $349</p></div>
+          <div class="score"><div class="score__num">9.4</div><div class="score__label">/10</div></div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:16px;">
+          {[["Sleep","★★★★★"],["HRV","★★★★★"],["Battery","★★★★☆"]].map(([l,s]) => (
+            <div style="background:rgba(255,255,255,0.03);border-radius:8px;padding:8px 6px;text-align:center;">
+              <div style="font-size:9px;color:rgba(255,255,255,0.35);margin-bottom:3px;font-family:monospace;">{l}</div>
+              <div style="font-size:10px;color:#00FFB2;">{s}</div>
             </div>
-            <div class="card__body">
-              <div style="margin-bottom:10px;"><span class={a.tagClass}>{a.tag}</span></div>
-              <h3 class="card__title">{a.title}</h3>
-              <p class="card__excerpt">{a.excerpt}</p>
-              <div class="card__meta"><span>⏱ {a.time} read</span><span style="color:rgba(0,255,178,0.5);">◈ Affiliate</span></div>
-            </div>
-          </a>
-        ))}
+          ))}
+        </div>
+        <a href="https://ouraring.com" target="_blank" rel="noopener noreferrer" class="cta-btn" style="display:block;text-align:center;width:100%;">Check price at ouraring.com →</a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
+<section id="products" style="padding:0 0 64px;">
+  <div class="container">
+    <h2 style="font-size:22px;font-weight:400;margin-bottom:8px;">Best smart rings of 2026</h2>
+    <p style="font-size:14px;color:rgba(255,255,255,0.4);margin-bottom:28px;">Analyzed and compared over 60 days under the same conditions.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px;">
+      {products.map((p) => (
+        <div style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.07);border-radius:14px;overflow:hidden;">
+          <div style="position:relative;">
+            <img src={p.img} alt={p.name} style="width:100%;aspect-ratio:16/9;object-fit:cover;display:block;" loading="lazy"/>
+            <div style={`position:absolute;top:12px;left:12px;background:${p.tagColor};color:#09090E;font-size:10px;font-weight:700;font-family:monospace;padding:3px 8px;border-radius:4px;`}>{p.tag}</div>
+            <div style="position:absolute;top:12px;right:12px;background:rgba(9,9,14,0.85);border:1px solid rgba(0,255,178,0.3);border-radius:6px;padding:4px 8px;font-size:13px;font-weight:700;color:#00FFB2;font-family:monospace;">{p.score}</div>
+          </div>
+          <div style="padding:20px;">
+            <h3 style="font-size:17px;font-weight:400;color:#fff;margin-bottom:6px;">{p.name}</h3>
+            <p style="font-size:13px;color:rgba(255,255,255,0.5);margin-bottom:14px;line-height:1.5;">{p.desc}</p>
+            <div style="display:flex;gap:16px;margin-bottom:14px;">
+              <div><div style="font-size:9px;color:rgba(255,255,255,0.3);font-family:monospace;margin-bottom:2px;">PRICE</div><div style="font-size:16px;color:#fff;font-weight:600;">{p.price}</div></div>
+              <div><div style="font-size:9px;color:rgba(255,255,255,0.3);font-family:monospace;margin-bottom:2px;">FEE</div><div style={`font-size:13px;color:${p.subColor};`}>{p.sub}</div></div>
+            </div>
+            <ul style="list-style:none;padding:0;margin:0 0 16px;">
+              {p.pros.map((pro) => <li style="font-size:12px;color:rgba(255,255,255,0.6);padding:3px 0;display:flex;gap:6px;"><span style="color:#00FFB2;">+</span>{pro}</li>)}
+              {p.cons.map((con) => <li style="font-size:12px;color:rgba(255,255,255,0.6);padding:3px 0;display:flex;gap:6px;"><span style="color:#FF6B35;">−</span>{con}</li>)}
+            </ul>
+            <div style="display:flex;gap:8px;">
+              <a href={p.url} target="_blank" rel="noopener noreferrer" class="cta-btn" style="flex:1;text-align:center;font-size:13px;padding:10px;">Check price →</a>
+              <a href={p.slug} class="cta-btn cta-btn--outline" style="font-size:12px;padding:10px 14px;">Review</a>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<section style="padding:0 0 80px;">
+  <div class="container">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;">
+      <h2 style="font-size:22px;font-weight:400;">All reviews & guides</h2>
+      <a href="/reviews/best-smart-ring-2026" style="font-size:13px;color:rgba(255,255,255,0.4);">Complete guide →</a>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;">
+      {articles.map((a) => (
+        <a href={a.slug} class="card" style="display:block;color:inherit;text-decoration:none;">
+          <img src={a.img} alt={a.title} class="card__img" loading="lazy"/>
+          <div class="card__body">
+            <div style="margin-bottom:8px;"><span style={`display:inline-block;font-family:monospace;font-size:10px;letter-spacing:0.07em;padding:2px 8px;border-radius:4px;background:${a.tagColor}15;border:1px solid ${a.tagColor}35;color:${a.tagColor};`}>{a.tag}</span></div>
+            <h3 class="card__title">{a.title}</h3>
+            <p class="card__excerpt">{a.excerpt}</p>
+            <div class="card__meta"><span>⏱ {a.time} read</span><span style="color:rgba(0,255,178,0.5);">Read →</span></div>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
+
 </BaseLayout>
-
-<style>@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}</style>

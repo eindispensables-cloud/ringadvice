@@ -1,0 +1,109 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const now = new Date();
+const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+const buildDate = `${months[now.getMonth()]} ${now.getFullYear()}`;
+---
+<BaseLayout title="What Does the Oura Ring Actually Do? (2026)" description="Discover exactly what the Oura Ring does, what data it measures and whether its metrics are truly useful. Honest analysis with no sponsorships." lang="en" enPath="/guides/what-does-oura-ring-do" esPath="/es/guias/oura-ring-para-que-sirve-exactamente">
+<article style="padding:clamp(32px,5vw,64px) 0;">
+<div class="container--narrow">
+<nav style="margin-bottom:24px;font-size:12px;font-family:monospace;color:rgba(255,255,255,0.3);">
+  <a href="/" style="color:rgba(255,255,255,0.35);">ringadvice</a> / <a href="/guides" style="color:rgba(255,255,255,0.35);">guides</a> / <span style="color:#00FFB2;">what does oura ring do</span>
+</nav>
+<span class="badge">GUIDE</span>
+<h1 style="font-size:clamp(24px,4vw,38px);font-weight:400;color:#fff;margin:16px 0;line-height:1.2;">What does the Oura Ring actually do — and what can you expect from it</h1>
+<p style="font-size:17px;color:rgba(255,255,255,0.55);margin-bottom:8px;">The Oura Ring is a sensor ring that measures your sleep, recovery and activity with an accuracy no smartwatch has matched yet. But it doesn't do everything some people think.</p>
+<div style="font-size:11px;color:rgba(255,255,255,0.3);font-family:monospace;margin-bottom:28px;">📅 {buildDate} · ⏱ 8 min read</div>
+<img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=800&q=80" alt="Oura Ring smart ring" style="width:100%;border-radius:12px;aspect-ratio:16/9;object-fit:cover;margin-bottom:28px;" loading="lazy"/>
+<div class="verdict-box">
+  <span class="verdict-box__label">⚡ QUICK CONCLUSION</span>
+  <p>The Oura Ring is primarily for understanding your sleep and recovery with real data. If that's what you're looking for, it's the best on the market. If you want to count steps or receive notifications, it's not your device.</p>
+</div>
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin:20px 0;">
+  <a href="https://ouraring.com" target="_blank" rel="noopener noreferrer" class="cta-btn">Check price at ouraring.com →</a>
+  <a href="/reviews/oura-ring-review-after-2-months" class="cta-btn cta-btn--outline">Read 2-month review →</a>
+</div>
+<div class="article-content">
+<h2>What the Oura Ring actually does</h2>
+<img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&q=80" alt="Health monitoring data" style="width:100%;border-radius:10px;aspect-ratio:16/9;object-fit:cover;margin-bottom:20px;" loading="lazy"/>
+<p>The Oura Ring has optical sensors, an accelerometer and a temperature sensor on the inside of the ring. All of that works together to give you three main metrics each morning: <strong>Sleep Score</strong>, <strong>Activity Score</strong> and <strong>Readiness Score</strong>.</p>
+<p>The Readiness Score is the most valuable. It tells you, on a scale of 0-100, how ready your body is for the day. It's calculated by combining your HRV, resting heart rate, body temperature and sleep quality from recent days.</p>
+<p>After using it for weeks you start seeing patterns you hadn't noticed: how alcohol affects your deep sleep, how work stress lowers your HRV days later, or how a very intense workout needs 48 hours of real recovery.</p>
+<h2>The metrics that add the most value</h2>
+<div class="table-wrap">
+<table class="comparison-table">
+<thead><tr><th>Metric</th><th>What it measures</th><th>Real usefulness</th></tr></thead>
+<tbody>
+<tr class="winner"><td>HRV</td><td>Variability between heartbeats</td><td>Very high — indicates recovery</td></tr>
+<tr><td>Deep sleep</td><td>Physical recovery phase</td><td>High — improves with habits</td></tr>
+<tr><td>Temperature</td><td>Variation from your baseline</td><td>High — detects illness/cycle</td></tr>
+<tr><td>Resting HR</td><td>Beats per minute while sleeping</td><td>Medium — baseline reference</td></tr>
+<tr><td>Steps</td><td>Daily activity</td><td>Low — a smartwatch does this better</td></tr>
+</tbody>
+</table>
+</div>
+<h2>What the Oura Ring is NOT for</h2>
+<p>It's important to be clear here. The Oura Ring <strong>is not for</strong> GPS tracking of runs or routes, receiving phone notifications, measuring blood oxygen in real-time (only at night), or users who just want a pedometer.</p>
+<p>If you have an iPhone and want to compare, the Apple Watch Series 10 does more things but its sleep analysis is still inferior to the Oura Ring in detail and accuracy.</p>
+<h2>Is the monthly subscription worth it?</h2>
+<img src="https://images.unsplash.com/photo-1434494878577-86c23bcb06b9?w=800&q=80" alt="Health data mobile app" style="width:100%;border-radius:10px;aspect-ratio:16/9;object-fit:cover;margin-bottom:20px;" loading="lazy"/>
+<p>The Oura Ring costs between $299 and $499 depending on the material, plus $6/month (or $72/year) subscription. Without the subscription you see basic data, but you lose AI insights, historical trends and personalized recommendations.</p>
+<p>If you're going to use it seriously, the subscription is worth it. If you just want raw data without interpretation, consider the Ultrahuman Ring Air or Samsung Galaxy Ring, which have no monthly fee.</p>
+<h2>Frequently asked questions about the Oura Ring</h2>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+  <p class="faq-item__q" itemprop="name">Does the Oura Ring measure blood pressure?</p>
+  <div class="faq-item__a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+    <p itemprop="text">No. The Oura Ring does not measure blood pressure. It measures heart rate, HRV and temperature. For blood pressure you need a dedicated device or some smartwatches like the Samsung Galaxy Watch 6.</p>
+  </div>
+</div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+  <p class="faq-item__q" itemprop="name">How long until it learns my patterns?</p>
+  <div class="faq-item__a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+    <p itemprop="text">The Oura Ring needs about 14 days to establish your personal baseline. In the first weeks data is indicative; from the third week it becomes truly accurate and personalized.</p>
+  </div>
+</div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+  <p class="faq-item__q" itemprop="name">Can you wear it with jewelry rings?</p>
+  <div class="faq-item__a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+    <p itemprop="text">Yes, on different fingers. It's recommended to wear it on the index, middle or ring finger of your non-dominant hand for best accuracy. It doesn't interfere with other rings on other fingers.</p>
+  </div>
+</div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+  <p class="faq-item__q" itemprop="name">Is it available in the US and internationally?</p>
+  <div class="faq-item__a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+    <p itemprop="text">Yes. Buy directly at ouraring.com with shipping worldwide. In the US it's also available at Best Buy and through Amazon.</p>
+  </div>
+</div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+  <p class="faq-item__q" itemprop="name">Does it work without a phone?</p>
+  <div class="faq-item__a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+    <p itemprop="text">The ring collects data without a phone, but needs periodic sync with the app. It can store up to 6 weeks of data locally before needing to sync.</p>
+  </div>
+</div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+  <p class="faq-item__q" itemprop="name">What's the difference between Oura Ring 3 and 4?</p>
+  <div class="faq-item__a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+    <p itemprop="text">Oura Ring 4 has improved sensors for greater accuracy in HRV and temperature, better battery life (7 to 8 days), and a slimmer design. If you have the 3 and it works well, the upgrade isn't urgent. Starting fresh, choose the 4.</p>
+  </div>
+</div>
+</div>
+
+<div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;margin:32px 0;">
+  <p style="font-size:13px;color:rgba(255,255,255,0.5);margin-bottom:12px;font-family:monospace;">RELATED ARTICLES</p>
+  <div style="display:flex;flex-direction:column;gap:8px;">
+    <a href="/reviews/best-smart-ring-2026" style="color:rgba(255,255,255,0.8);font-size:14px;text-decoration:none;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.06);">→ Best Smart Rings of 2026: complete ranking</a>
+    <a href="/reviews/oura-ring-review-after-2-months" style="color:rgba(255,255,255,0.8);font-size:14px;text-decoration:none;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.06);">→ Oura Ring 4: honest review after 2 months of use</a>
+    <a href="/guides/what-is-a-smart-health-ring" style="color:rgba(255,255,255,0.8);font-size:14px;text-decoration:none;padding:8px 0;">→ What is a smart health ring? Complete beginner's guide</a>
+  </div>
+</div>
+
+<div style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:24px;margin-top:32px;">
+  <p style="font-size:15px;color:rgba(255,255,255,0.8);margin-bottom:16px;">The Oura Ring 4 is the most complete smart ring on the market for sleep analysis and recovery. If that's what you're after, it's worth every dollar.</p>
+  <div style="display:flex;gap:10px;flex-wrap:wrap;">
+    <a href="https://ouraring.com" target="_blank" rel="noopener noreferrer" class="cta-btn">Check price at ouraring.com →</a>
+    <a href="/reviews/oura-ring-review-after-2-months" class="cta-btn cta-btn--outline">Read real review</a>
+  </div>
+</div>
+</div>
+</article>
+</BaseLayout>

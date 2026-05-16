@@ -1,20 +1,23 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+const now = new Date();
+const meses = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+const fechaActual = `Actualizado ${meses[now.getMonth()]} ${now.getFullYear()}`;
 const products = [
   { name:"Oura Ring 4", desc:"El más preciso en análisis de sueño y HRV. Compatible con iPhone y Android.", price:"desde 349€", sub:"6€/mes", subColor:"#FF6B35", score:"9.4", tag:"MEJOR VALORADO", tagColor:"#00FFB2", img:"https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=600&q=80", url:"https://ouraring.com", pros:["Mejor análisis de sueño","Compatible iOS y Android","8 días de batería"], cons:["Requiere suscripción mensual"], slug:"/es/analisis/oura-ring-vale-la-pena-en-2026" },
-  { name:"Samsung Galaxy Ring", desc:"Sin suscripción mensual. Ideal para el ecosistema Samsung y usuarios Android.", price:"desde 299€", sub:"Sin suscripción", subColor:"#00FFB2", score:"8.8", tag:"SIN CUOTA", tagColor:"#FFD700", img:"https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&q=80", url:"https://www.samsung.com/es/smartphones/galaxy-ring/", pros:["Sin suscripción","Integración Samsung Health","7 días de batería"], cons:["Solo funciona con Android"], slug:"/es/analisis/samsung-galaxy-ring-vs-oura-ring-cual-comprar" },
-  { name:"Ultrahuman Ring Air", desc:"La alternativa más ligera. Sin suscripción y compatible con iOS y Android.", price:"desde 249€", sub:"Sin suscripción", subColor:"#00FFB2", score:"8.3", tag:"MEJOR PRECIO", tagColor:"#A78BFA", img:"https://images.unsplash.com/photo-1434494878577-86c23bcb06b9?w=600&q=80", url:"https://www.ultrahuman.com/ring", pros:["Muy ligero","Sin suscripción","Compatible iOS"], cons:["Menos preciso en HRV"], slug:"/es/analisis/alternativas-al-oura-ring-que-no-requieren-suscripcion" }
+  { name:"Samsung Galaxy Ring", desc:"Sin suscripción mensual. Ideal para el ecosistema Samsung y usuarios Android.", price:"desde 299€", sub:"Sin suscripción", subColor:"#00FFB2", score:"8.8", tag:"SIN CUOTA", tagColor:"#FFD700", img:"https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&q=80", url:"https://www.samsung.com/es/smartphones/galaxy-ring/", pros:["Sin suscripción","Integración Samsung Health","7 días de batería"], cons:["Solo funciona con Android"], slug:"/es/comparativas/samsung-galaxy-ring-vs-oura-ring-cual-comprar" },
+  { name:"Ultrahuman Ring Air", desc:"La alternativa más ligera. Sin suscripción y compatible con iOS y Android.", price:"desde 249€", sub:"Sin suscripción", subColor:"#00FFB2", score:"8.3", tag:"MEJOR PRECIO", tagColor:"#A78BFA", img:"https://images.unsplash.com/photo-1434494878577-86c23bcb06b9?w=600&q=80", url:"https://www.ultrahuman.com/ring", pros:["Muy ligero","Sin suscripción","Compatible iOS"], cons:["Menos preciso en HRV"], slug:"/es/comparativas/alternativas-al-oura-ring-que-no-requieren-suscripcion" }
 ];
 const articles = [
-  { tag:"GUÍA", tagColor:"#A78BFA", title:"Para qué sirve un anillo inteligente de salud", excerpt:"Un anillo inteligente mide tu sueño, frecuencia cardíaca y recuperación las 24h. Sin pantalla, sin que lo notes.", img:"https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=400&q=80", slug:"/es/analisis/para-que-sirve-un-anillo-inteligente-de-salud", time:"7 min" },
-  { tag:"GUÍA", tagColor:"#A78BFA", title:"Oura Ring: para qué sirve exactamente", excerpt:"El Oura Ring mide sueño, HRV y recuperación. Guía honesta de lo que hace y lo que no.", img:"https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&q=80", slug:"/es/analisis/oura-ring-para-que-sirve-exactamente", time:"8 min" },
+  { tag:"GUÍA", tagColor:"#A78BFA", title:"Para qué sirve un anillo inteligente de salud", excerpt:"Un anillo inteligente mide tu sueño, frecuencia cardíaca y recuperación las 24h.", img:"https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=400&q=80", slug:"/es/guias/para-que-sirve-un-anillo-inteligente-de-salud", time:"7 min" },
+  { tag:"GUÍA", tagColor:"#A78BFA", title:"Oura Ring: para qué sirve exactamente", excerpt:"El Oura Ring mide sueño, HRV y recuperación. Guía honesta de lo que hace y lo que no.", img:"https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&q=80", slug:"/es/guias/oura-ring-para-que-sirve-exactamente", time:"8 min" },
   { tag:"ANÁLISIS", tagColor:"#00FFB2", title:"Anillo inteligente para el sueño: opiniones reales", excerpt:"60 noches de prueba. ¿Vale la pena un anillo para medir el sueño?", img:"https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=400&q=80", slug:"/es/analisis/anillo-inteligente-para-medir-el-sueno-opiniones", time:"9 min" },
-  { tag:"COMPARATIVA", tagColor:"#FF6B35", title:"Alternativas al Oura Ring sin suscripción", excerpt:"Las mejores alternativas al Oura Ring que no requieren cuota mensual.", img:"https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&q=80", slug:"/es/analisis/alternativas-al-oura-ring-que-no-requieren-suscripcion", time:"8 min" },
-  { tag:"COMPARATIVA", tagColor:"#FF6B35", title:"Samsung Galaxy Ring vs Oura Ring: cuál comprar", excerpt:"Los dos mejores anillos cara a cara. Probados 60 días en las mismas condiciones.", img:"https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=400&q=80", slug:"/es/analisis/samsung-galaxy-ring-vs-oura-ring-cual-comprar", time:"10 min" },
+  { tag:"COMPARATIVA", tagColor:"#FF6B35", title:"Alternativas al Oura Ring sin suscripción", excerpt:"Las mejores alternativas al Oura Ring que no requieren cuota mensual.", img:"https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&q=80", slug:"/es/comparativas/alternativas-al-oura-ring-que-no-requieren-suscripcion", time:"8 min" },
+  { tag:"COMPARATIVA", tagColor:"#FF6B35", title:"Samsung Galaxy Ring vs Oura Ring: cuál comprar", excerpt:"Los dos mejores anillos cara a cara. Probados 60 días en las mismas condiciones.", img:"https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=400&q=80", slug:"/es/comparativas/samsung-galaxy-ring-vs-oura-ring-cual-comprar", time:"10 min" },
   { tag:"ANÁLISIS", tagColor:"#00FFB2", title:"Oura Ring: opiniones tras 2 meses de uso real", excerpt:"60 días con el Oura Ring 4. Lo bueno, lo malo y si merece la pena.", img:"https://images.unsplash.com/photo-1434494878577-86c23bcb06b9?w=400&q=80", slug:"/es/analisis/oura-ring-opiniones-tras-2-meses-de-uso", time:"9 min" },
-  { tag:"GUÍA", tagColor:"#A78BFA", title:"Anillo inteligente vs smartwatch: cuál es mejor", excerpt:"No son lo mismo. Te explicamos cuándo elegir cada uno según lo que buscas.", img:"https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&q=80", slug:"/es/analisis/anillo-inteligente-o-smartwatch-para-salud", time:"8 min" },
+  { tag:"GUÍA", tagColor:"#A78BFA", title:"Anillo inteligente vs smartwatch: cuál es mejor", excerpt:"No son lo mismo. Te explicamos cuándo elegir cada uno según lo que buscas.", img:"https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&q=80", slug:"/es/guias/anillo-inteligente-o-smartwatch-para-salud", time:"8 min" },
   { tag:"ANÁLISIS", tagColor:"#00FFB2", title:"Mejores anillos inteligentes sin suscripción 2026", excerpt:"Seguimiento serio de salud sin pagar cuota mensual.", img:"https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&q=80", slug:"/es/analisis/mejores-anillos-inteligentes-sin-suscripcion-mensual", time:"8 min" },
-  { tag:"ANÁLISIS", tagColor:"#00FFB2", title:"¿Vale la pena el Oura Ring en 2026?", excerpt:"349€ más suscripción es mucho dinero. Respuesta directa: sí o no según tu caso.", img:"https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=400&q=80", slug:"/es/analisis/oura-ring-vale-la-pena-en-2026", time:"7 min" },
+  { tag:"ANÁLISIS", tagColor:"#00FFB2", title:"¿Vale la pena el Oura Ring en 2026?", excerpt:"349€ más suscripción. Respuesta directa: sí o no según tu caso.", img:"https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=400&q=80", slug:"/es/analisis/oura-ring-vale-la-pena-en-2026", time:"7 min" },
   { tag:"⭐ GUÍA PILAR", tagColor:"#FFD700", title:"El mejor anillo inteligente de 2026: guía completa", excerpt:"Todos los anillos analizados y comparados. Cuál comprar según tu caso y presupuesto.", img:"https://images.unsplash.com/photo-1434494878577-86c23bcb06b9?w=400&q=80", slug:"/es/analisis/mejor-anillo-inteligente-2026", time:"12 min" }
 ];
 ---
@@ -26,17 +29,17 @@ const articles = [
       <div>
         <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(0,255,178,0.08);border:1px solid rgba(0,255,178,0.2);border-radius:20px;padding:4px 14px;margin-bottom:20px;">
           <span style="width:6px;height:6px;border-radius:50%;background:#00FFB2;"></span>
-          <span style="font-size:11px;color:#00FFB2;font-family:monospace;letter-spacing:0.1em;">ACTUALIZADO MAYO 2026</span>
+          <span style="font-size:11px;color:#00FFB2;font-family:monospace;letter-spacing:0.1em;">{fechaActual.toUpperCase()}</span>
         </div>
         <h1 style="font-size:clamp(26px,3.5vw,44px);line-height:1.15;color:#fff;font-weight:400;margin-bottom:18px;">La guía independiente sobre<br/><em style="color:#00FFB2;">anillos inteligentes</em><br/>que realmente funcionan.</h1>
         <p style="font-size:16px;color:rgba(255,255,255,0.55);line-height:1.7;margin-bottom:28px;">Análisis independientes basados en pruebas reales. Sin contenido patrocinado ni acuerdos con marcas.</p>
         <div style="display:flex;gap:12px;flex-wrap:wrap;">
-          <a href="#productos" class="cta-btn cta-btn--lg">Ver mejores anillos →</a>
-          <a href="/es/analisis/mejor-anillo-inteligente-2026" class="cta-btn cta-btn--outline" style="padding:14px 20px;">Guía completa</a>
+          <a href="/es/analisis/mejor-anillo-inteligente-2026" class="cta-btn cta-btn--lg">Ver mejores anillos →</a>
+          <a href="/es/analisis" class="cta-btn cta-btn--outline" style="padding:14px 20px;">Todos los análisis</a>
         </div>
       </div>
       <div style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.07);border-radius:16px;padding:24px;">
-        <div style="font-size:10px;color:rgba(255,255,255,0.3);font-family:monospace;margin-bottom:14px;">ELECCIÓN DEL EDITOR — MAYO 2026</div>
+        <div style="font-size:10px;color:rgba(255,255,255,0.3);font-family:monospace;margin-bottom:14px;">ELECCIÓN DEL EDITOR — {fechaActual.toUpperCase()}</div>
         <img src={products[0].img} alt="Oura Ring 4" style="width:100%;border-radius:10px;aspect-ratio:16/9;object-fit:cover;margin-bottom:18px;" loading="lazy"/>
         <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px;">
           <div><h3 style="font-size:18px;font-weight:400;color:#fff;margin-bottom:4px;">Oura Ring 4</h3><p style="font-size:12px;color:rgba(255,255,255,0.4);">El mejor en general · desde 349€</p></div>
@@ -50,7 +53,7 @@ const articles = [
             </div>
           ))}
         </div>
-        <a href={products[0].url} target="_blank" rel="noopener noreferrer" class="cta-btn" style="display:block;text-align:center;width:100%;">Ver precio en ouraring.com →</a>
+        <a href="https://ouraring.com" target="_blank" rel="noopener noreferrer" class="cta-btn" style="display:block;text-align:center;width:100%;">Ver precio en ouraring.com →</a>
       </div>
     </div>
   </div>

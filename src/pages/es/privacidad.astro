@@ -1,0 +1,83 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const now = new Date();
+const meses = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+const ultimaActualizacion = `${meses[now.getMonth()]} ${now.getFullYear()}`;
+---
+<BaseLayout title="Política de Privacidad — RingAdvice" description="Política de privacidad de RingAdvice. Cómo recogemos, usamos y protegemos tus datos de acuerdo con el RGPD y la LOPDGDD." lang="es" enPath="/privacy" esPath="/es/privacidad">
+<article style="padding:clamp(32px,5vw,64px) 0;">
+<div class="container--narrow">
+<nav style="margin-bottom:24px;font-size:12px;font-family:monospace;color:rgba(255,255,255,0.3);">
+  <a href="/es" style="color:rgba(255,255,255,0.35);">ringadvice</a> / <span style="color:#00FFB2;">política de privacidad</span>
+</nav>
+<h1 style="font-size:clamp(24px,4vw,36px);font-weight:400;color:#fff;margin:16px 0 8px;">Política de Privacidad y Cookies</h1>
+<p style="font-size:13px;color:rgba(255,255,255,0.3);font-family:monospace;margin-bottom:32px;">Última actualización: {ultimaActualizacion}</p>
+
+<div class="article-content">
+
+<h2>1. Responsable del Tratamiento</h2>
+<p>ringadvice.com es un proyecto editorial independiente. Para consultas sobre privacidad, contacta en: <strong>privacy@ringadvice.com</strong></p>
+
+<h2>2. Datos que Recogemos</h2>
+<p>Recogemos las siguientes categorías de datos:</p>
+<ul style="color:rgba(255,255,255,0.7);line-height:1.8;">
+  <li><strong>Datos de navegación:</strong> Páginas visitadas, tiempo en el sitio, URL de referencia, tipo de navegador y sistema operativo. Recogidos de forma anónima mediante herramientas de analítica.</li>
+  <li><strong>Cookies:</strong> Utilizamos cookies para analítica (Google Analytics) y seguimiento de afiliados. Ver Sección 4 para más detalles.</li>
+  <li><strong>Sin formularios de datos personales:</strong> No recogemos nombres, emails ni direcciones salvo que te pongas en contacto con nosotros directamente.</li>
+</ul>
+
+<h2>3. Finalidad y Base Jurídica del Tratamiento</h2>
+<div class="table-wrap">
+<table class="comparison-table">
+<thead><tr><th>Finalidad</th><th>Base Jurídica</th></tr></thead>
+<tbody>
+<tr><td>Analítica web y rendimiento</td><td>Interés legítimo (Art. 6.1.f RGPD)</td></tr>
+<tr><td>Seguimiento de enlaces de afiliado</td><td>Consentimiento (Art. 6.1.a RGPD)</td></tr>
+<tr><td>Respuesta a consultas</td><td>Ejecución de contrato (Art. 6.1.b RGPD)</td></tr>
+</tbody>
+</table>
+</div>
+
+<h2>4. Política de Cookies</h2>
+<p>Utilizamos las siguientes cookies:</p>
+<ul style="color:rgba(255,255,255,0.7);line-height:1.8;">
+  <li><strong>_ga, _ga_* (Google Analytics):</strong> Analítica de tráfico anónima. Conservación: 2 años. Puedes desactivarlas en <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer" style="color:#00FFB2;">tools.google.com/dlpage/gaoptout</a></li>
+  <li><strong>Cookies de Amazon Associates:</strong> Se activan cuando haces clic en un enlace de afiliado. Permiten a Amazon atribuir compras a nuestra referencia. Conservación: 24 horas (sesión) o 90 días (añadido al carrito). Reguladas por la política de privacidad de Amazon.</li>
+</ul>
+<p>Puedes gestionar o desactivar las cookies desde la configuración de tu navegador en cualquier momento.</p>
+
+<h2>5. Tus Derechos según el RGPD y la LOPDGDD</h2>
+<p>Como residente en la UE/EEE o España, tienes los siguientes derechos:</p>
+<ul style="color:rgba(255,255,255,0.7);line-height:1.8;">
+  <li><strong>Derecho de acceso:</strong> Solicitar una copia de los datos personales que conservamos sobre ti.</li>
+  <li><strong>Derecho de rectificación:</strong> Solicitar la corrección de datos inexactos.</li>
+  <li><strong>Derecho de supresión ("derecho al olvido"):</strong> Solicitar la eliminación de tus datos.</li>
+  <li><strong>Derecho a la limitación del tratamiento:</strong> Solicitar que limitemos el tratamiento de tus datos.</li>
+  <li><strong>Derecho a la portabilidad:</strong> Recibir tus datos en formato legible por máquina.</li>
+  <li><strong>Derecho de oposición:</strong> Oponerte al tratamiento basado en interés legítimo.</li>
+  <li><strong>Derecho a retirar el consentimiento:</strong> Retirar el consentimiento en cualquier momento sin que ello afecte a la licitud del tratamiento previo.</li>
+</ul>
+<p>Para ejercer cualquiera de estos derechos, escríbenos a <strong>privacy@ringadvice.com</strong>. Responderemos en un plazo máximo de 30 días. También puedes presentar una reclamación ante la Agencia Española de Protección de Datos (AEPD) en <a href="https://www.aepd.es" target="_blank" rel="noopener noreferrer" style="color:#00FFB2;">aepd.es</a>.</p>
+
+<h2>6. Periodo de Conservación</h2>
+<p>Los datos de analítica se conservan durante 26 meses. Los datos de seguimiento de afiliados se conservan según las políticas de Amazon (generalmente 90 días). Si nos contactas, la correspondencia se conserva hasta 3 años.</p>
+
+<h2>7. Transferencias Internacionales</h2>
+<p>Google Analytics puede transferir datos a Estados Unidos. Google LLC participa en el Marco de Privacidad de Datos UE-EE.UU. Amazon Associates transfiere datos según su Aviso de Privacidad, que cubre las transferencias internacionales mediante Cláusulas Contractuales Estándar.</p>
+
+<h2>8. Enlaces a Terceros</h2>
+<p>Nuestro sitio contiene enlaces a páginas web de terceros (ouraring.com, samsung.com, ultrahuman.com, amazon.es). No somos responsables de las prácticas de privacidad de estos sitios. Te recomendamos que revises sus políticas antes de facilitar datos personales.</p>
+
+<h2>9. Política de Afiliados</h2>
+<p>ringadvice.com participa en el Programa de Afiliados de Amazon y puede participar en otros programas de afiliados. Cuando haces clic en un enlace de afiliado y realizas una compra, podemos ganar una comisión sin coste adicional para ti. Esto no influye en nuestras opiniones ni recomendaciones editoriales.</p>
+
+<h2>10. Cambios en esta Política</h2>
+<p>Podemos actualizar esta Política de Privacidad periódicamente. La fecha en la parte superior de esta página refleja la última revisión. Te recomendamos que consultes esta página de vez en cuando.</p>
+
+<h2>11. Contacto</h2>
+<p>Para cualquier consulta relacionada con la privacidad o para ejercer tus derechos, contacta en: <strong>privacy@ringadvice.com</strong></p>
+
+</div>
+</div>
+</article>
+</BaseLayout>
